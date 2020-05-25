@@ -6,7 +6,7 @@ module.exports = GLAudioAnalyser
 
 function GLAudioAnalyser(gl, audio, ctx, opts) {
   if (!(this instanceof GLAudioAnalyser))
-    return new GLAudioAnalyser(gl, audio, ctx)
+    return new GLAudioAnalyser(gl, audio, ctx, opts)
 
   this.gl    = gl
   this.audio = audio
