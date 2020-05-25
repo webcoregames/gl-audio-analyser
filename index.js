@@ -4,7 +4,7 @@ var ndarray  = require('ndarray')
 
 module.exports = GLAudioAnalyser
 
-function GLAudioAnalyser(gl, audio, ctx) {
+function GLAudioAnalyser(gl, audio, ctx, opts) {
   if (!(this instanceof GLAudioAnalyser))
     return new GLAudioAnalyser(gl, audio, ctx)
 
@@ -12,7 +12,7 @@ function GLAudioAnalyser(gl, audio, ctx) {
   this.audio = audio
   this.ctx   = ctx || new AudioContext
 
-  this.waa     = Analyser(this.audio, this.ctx)
+  this.waa     = Analyser(this.audio, this.ctx, opts)
 
   var size = (this.waa.analyser[0] || this.waa.analyser).frequencyBinCount
 
